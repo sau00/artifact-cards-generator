@@ -1,4 +1,4 @@
-package imagefontpack
+package services
 
 import (
 	"encoding/json"
@@ -9,7 +9,7 @@ import (
 	"os"
 )
 
-type Font struct {
+type ImageFont struct {
 	Filename string            `json:"filename"`
 	Height   int               `json:"height"`
 	Letters  map[string]Letter `json:"letters"`
@@ -37,9 +37,9 @@ func ParseAlphabet(i, o string) {
 
 	height := alphabetImg.Bounds().Dy()
 
-	alphabetStr := []rune("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя-+=';\"/?!\\")
+	alphabetStr := []rune("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя-+=';\"/?!\\1234567890")
 
-	var alphabetJSON Font
+	var alphabetJSON ImageFont
 	alphabetJSON.Filename = "alphabet.png"
 	alphabetJSON.Height = height
 
